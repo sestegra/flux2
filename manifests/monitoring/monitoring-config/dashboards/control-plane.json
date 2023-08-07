@@ -854,17 +854,17 @@
       "steppedLine": true,
       "targets": [
         {
-          "expr": "sum(increase(controller_runtime_reconcile_total{controller=~\"gitrepository|ocirepository\",result!=\"error\"}[1m]))",
+          "expr": "sum(increase(controller_runtime_reconcile_total{controller=\"gitrepository\",result!=\"error\"}[1m]))",
           "format": "time_series",
           "interval": "",
-          "legendFormat": "successful pulls",
+          "legendFormat": "successful git pulls",
           "refId": "A"
         },
         {
-          "expr": "sum(increase(controller_runtime_reconcile_total{controller=~\"gitrepository|ocirepository\",result=\"error\"}[1m]))",
+          "expr": "sum(increase(controller_runtime_reconcile_total{controller=\"gitrepository\",result=\"error\"}[1m]))",
           "format": "time_series",
           "interval": "",
-          "legendFormat": "failed pulls",
+          "legendFormat": "failed git pulls",
           "refId": "B"
         }
       ],
@@ -872,7 +872,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Git/OCI Sources ops/min",
+      "title": "Git Sources ops/min",
       "tooltip": {
         "shared": true,
         "sort": 0,
